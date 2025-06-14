@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Megabayz | Dashboard</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Roboto', sans-serif;
+    }
+
+    body {
+      background: #fff9f0;
+      color: #333;
+      display: flex;
+      height: 100vh;
+    }
+
+    aside {
+      width: 250px;
+      background: #fff;
+      border-right: 1px solid #f0e0cc;
+      padding: 2rem 1rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .sidebar-top img {
+      width: 100px;
+      margin-bottom: 1rem;
+    }
+
+    .sidebar-top p {
+      font-family: 'Poppins', sans-serif;
+    }
+
+    .sidebar-section h4 {
+      font-family: 'Poppins', sans-serif;
+      font-size: 14px;
+      margin: 1.2rem 0 0.5rem;
+      color: #aa5500;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .sidebar-section ul {
+      list-style: none;
+      margin-left: 1rem;
+      display: none;
+    }
+
+    .sidebar-section ul.active {
+      display: block;
+    }
+
+    .sidebar-section li {
+      margin: 0.3rem 0;
+    }
+
+    .sidebar-section a {
+      color: #333;
+      font-size: 14px;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      transition: color 0.2s;
+    }
+
+    .sidebar-section a:hover {
+      color: #fb8c00;
+    }
+
+    .sidebar-section i {
+      margin-right: 8px;
+      width: 16px;
+    }
+
+    .main {
+      flex: 1;
+      padding: 1.5rem;
+      overflow-y: auto;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 2rem;
+    }
+
+    header h2 {
+      font-family: 'Poppins', sans-serif;
+    }
+
+    .banner {
+      display: flex;
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .banner img {
+      width: 60%;
+      border-radius: 10px;
+    }
+
+    .cta.card {
+      flex: 1;
+      align-self: flex-start;
+    }
+
+    .card {
+      background: #fff;
+      border-radius: 12px;
+      padding: 1rem;
+      box-shadow: 0 2px 8px rgba(255, 170, 0, 0.1);
+      border: 1px solid #ffe2b3;
+    }
+
+    .card.orange {
+      background: linear-gradient(to right, #ffa726, #fb8c00);
+      color: white;
+    }
+
+    .card h3 {
+      font-family: 'Poppins', sans-serif;
+      font-size: 16px;
+      margin-bottom: 0.5rem;
+    }
+
+    .button {
+      background: #fb8c00;
+      color: white;
+      border: none;
+      padding: 0.6rem 1.2rem;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 14px;
+      margin-right: 0.5rem;
+    }
+
+    .button.secondary {
+      background: white;
+      color: #fb8c00;
+      border: 1px solid #fb8c00;
+    }
+
+    .profile {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .profile img {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1rem;
+    }
+  </style>
+</head>
+<body>
+  <aside>
+    <div>
+      <div class="sidebar-top">
+        <img src="icon/MEGABAYZ.jpg" alt="Logo">
+        <p><strong>MEGABAYZ</strong><br><small>Dede Hardiansyah</small></p>
+      </div>
+      <div class="sidebar-section">
+        <h4 onclick="toggleMenu(this)">Umum <i class="fa-solid fa-chevron-down"></i></h4>
+        <ul>
+          <li><a href="dashboard.html"><i class="fa fa-house"></i> Beranda</a></li>
+        </ul>
+
+        <h4 onclick="toggleMenu(this)">Katalog <i class="fa-solid fa-chevron-down"></i></h4>
+        <ul>
+          <li><a href="rilis.html"><i class="fa fa-upload"></i> Rilis</a></li>
+          <li><a href="katalog.html"><i class="fa fa-music"></i> Katalog</a></li>
+        </ul>
+
+        <h4 onclick="toggleMenu(this)">Analitik <i class="fa-solid fa-chevron-down"></i></h4>
+        <ul>
+          <li><a href="performa.html"><i class="fa fa-chart-line"></i> Performa</a></li>
+          <li><a href="analitik-youtube.html"><i class="fa fa-youtube"></i> Analitik YouTube</a></li>
+          <li><a href="smart-analytics.html"><i class="fa fa-brain"></i> Smart Analytics</a></li>
+        </ul>
+
+        <h4 onclick="toggleMenu(this)">Laporan <i class="fa-solid fa-chevron-down"></i></h4>
+        <ul>
+          <li><a href="laporan-youtube.html"><i class="fa fa-youtube"></i> Laporan YouTube</a></li>
+          <li><a href="laporan-dsp.html"><i class="fa fa-file-alt"></i> Laporan DSP</a></li>
+        </ul>
+
+        <h4 onclick="toggleMenu(this)">Keuangan <i class="fa-solid fa-chevron-down"></i></h4>
+        <ul>
+          <li><a href="dsp-income.html"><i class="fa fa-money-bill"></i> Pendapatan DSP</a></li>
+          <li><a href="youtube-income.html"><i class="fa fa-money-check-alt"></i> Pendapatan YouTube</a></li>
+        </ul>
+
+        <h4 onclick="toggleMenu(this)">Layanan <i class="fa-solid fa-chevron-down"></i></h4>
+        <ul>
+          <li><a href="music-bank.html"><i class="fa fa-bank"></i> Music Bank</a></li>
+          <li><a href="ide-paylater.html"><i class="fa fa-credit-card"></i> IDE Paylater</a></li>
+        </ul>
+
+        <h4 onclick="toggleMenu(this)">Informasi <i class="fa-solid fa-chevron-down"></i></h4>
+        <ul>
+          <li><a href="profil.html"><i class="fa fa-user"></i> Profil</a></li>
+        </ul>
+      </div>
+    </div>
+    <button class="button" id="btnPanduan">Logout</button>
+  </aside>
+
+  <div class="main">
+        <header>
+        <h2>Dashboard</h2>
+        <div class="profile">
+            <span>Performa</span>
+            <a href="profil.html">
+            <img src="icon/MEGABAYZ.jpg" alt="Profil" />
+            </a>
+        </div>
+        </header>
+
+
+
+    <div class="banner">
+      <div class="card orange cta">
+        <h3>Distribusikan karyamu sekarang!</h3>
+        <p>Buat karyamu lebih banyak didengar dengan distribusi ke berbagai DSP.</p>
+        <button class="button">Rilis Musik Baru</button>
+        <button class="button secondary">Katalog</button>
+      </div>
+      <img src="https://via.placeholder.com/800x200?text=Apa+itu+Extended+Play" alt="Banner">
+    </div>
+
+    <h3 style="font-family: 'Poppins', sans-serif;">Laporan</h3>
+    <div class="cards">
+      <div class="card">
+        <h3>YouTube</h3>
+        <button class="button">Lihat Detail</button>
+      </div>
+      <div class="card">
+        <h3>DSP (Digital Streaming Platform)</h3>
+        <button class="button">Lihat Detail</button>
+      </div>
+      <div class="card orange">
+        <h3>Saldo Tersedia</h3>
+        <p>IDR 77.997.421</p>
+        <button class="button secondary">Penarikan</button>
+        <button class="button secondary">Riwayat</button>
+      </div>
+      <div class="card orange">
+        <h3>Pendapatan</h3>
+        <p>IDR 72.834.753.942</p>
+        <button class="button secondary">Laporan Pembayaran</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function toggleMenu(header) {
+      const ul = header.nextElementSibling;
+      const icon = header.querySelector('i');
+      ul.classList.toggle('active');
+
+      if (ul.classList.contains('active')) {
+        icon.classList.remove('fa-chevron-down');
+        icon.classList.add('fa-chevron-up');
+      } else {
+        icon.classList.remove('fa-chevron-up');
+        icon.classList.add('fa-chevron-down');
+      }
+    }
+    document.getElementById("btnPanduan").addEventListener("click", function() {
+    window.location.href = "index.html";
+    });
+
+  </script>
+</body>
+</html>
